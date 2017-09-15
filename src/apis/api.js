@@ -1,4 +1,5 @@
-import querystring from 'query-string'
+import querystring from 'query-string';
+import 'whatwg-fetch';
 
 const API_ENDPOINT = 'https://jsonplaceholder.typicode.com';
 
@@ -26,7 +27,6 @@ function request(props){
       headers: buildHeaders(init.headers),
     })
     .then(handleErrorResponse)
-    .then(response => mapModel(response, option))
 }
 
 function handleErrorResponse(response) {
@@ -37,12 +37,8 @@ function handleErrorResponse(response) {
     })
 }
 
-function mapModel(response, option) {
-  if (!option) return response;
-}
-
 const Api = {
-	get: (url, init, option) => {
+	get: (url, option) => {
 		return request({
       url,
 			init: {
@@ -52,7 +48,7 @@ const Api = {
     })
   },
 
-  post: (url, init, option) => {
+  post: (url, option) => {
 		return request({
       url,
 			init: {

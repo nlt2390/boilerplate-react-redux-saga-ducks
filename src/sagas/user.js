@@ -6,21 +6,21 @@ import {
 } from 'redux-saga/effects';
 
 import { 
-  types, 
-  actions,
-} from '../actions/user';
+  userTypes, 
+  userActions,
+} from '../state/user';
 
 import { 
   fetchUserProfile
-} from '../apis/user'
+} from '../apis/user';
 
 export function* getProfile(action) {
   const response = yield call(fetchUserProfile, action.payload.userID);
-  yield put(actions.getProfileSuccess(response));
+  yield put(userActions.fetchGetProfileSuccess(response));
 }
 
 export function* watchUserActions() {
   yield all([
-      takeEvery(types.GET_PROFILE_REQUEST, getProfile)
+    takeEvery(userTypes.FETCH_GET_PROFILE, getProfile)
   ])
 }
