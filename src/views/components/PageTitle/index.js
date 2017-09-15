@@ -7,7 +7,6 @@ function PageTitle(props){
   } = props;
   
   return(
-  
     <h2>{title}</h2>
   )
 }

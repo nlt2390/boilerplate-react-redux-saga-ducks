@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import UserProfile from '../../components/UserProfile';
-import { userActions } from '../../../state/user';
+import { 
+  userActions,
+  userSelectors,
+} from '../../../state/user';
 
 const UserContainer = (props) => {
   const {
@@ -35,7 +38,7 @@ const UserContainer = (props) => {
 
 function mapStateToProps(state){
   return {
-      profile: state.user.profile,
+      profile: userSelectors.profileNameSelector(state),
       isFetching: state.user.isFetching,
   }
 }
