@@ -1,5 +1,4 @@
 import querystring from 'query-string';
-import 'whatwg-fetch';
 
 const API_ENDPOINT = 'https://jsonplaceholder.typicode.com';
 

@@ -12,8 +12,7 @@
     "react-scripts": "1.0.12",
     "redux": "^3.7.2",
     "redux-saga": "^0.15.6",
-    "reselect": "^3.0.1",
-    "whatwg-fetch": "^2.0.3"
+    "reselect": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
